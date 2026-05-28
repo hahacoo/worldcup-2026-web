@@ -36,6 +36,9 @@ jobs:
             npm install --include=optional
           )
 
+      - name: Ensure Rollup Linux Binary
+        run: npm install --no-save @rollup/rollup-linux-x64-gnu@$(node -p "require('./node_modules/rollup/package.json').version")
+
       - name: Run tests
         run: npm run test
 
